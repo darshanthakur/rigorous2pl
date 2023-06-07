@@ -4,6 +4,7 @@ Implementation of Rigorous Two Phase Locking Protocol in Python.
 Input Format :
 
 Enter the operations seperated by comma or spaces such that for every operation:
+
 -First character specifies operation type (r for read or w for write)
 -Second character specifies the Transaction ID (1-9)
 -Third character specifies the variable on which that operation is done
