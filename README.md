@@ -1,22 +1,38 @@
-# rigorous2pl
-Implementation of Rigorous Two Phase Locking Protocol in Python.
+# Rigorous Two Phase Locking Protocol
 
-Input Format :
+This Python program implements the Rigorous Two Phase Locking (2PL) Protocol. The 2PL protocol is a concurrency control mechanism used in database systems to ensure serializability and avoid conflicts between transactions.
 
-Enter the operations seperated by comma or spaces such that for every operation:
+## Features
 
--First character specifies operation type (r for read or w for write)
--Second character specifies the Transaction ID (1-9)
--Third character specifies the variable on which that operation is done
+- **Read and Write Operations**: Transactions can perform read and write operations on variables.
+- **Commit and Abort**: Transactions can commit or abort, indicating the completion or termination of the transaction.
+- **Resource Table**: Provides information about the status of resources (variables) and their corresponding transactions.
+- **Log Table**: Displays the log of operations performed and their corresponding transactions.
 
-If any transaction Commits or Aborts it can be shown as:
+## Usage
 
-Commit: C1C
-Abort:A1A
+1. Run the program: `python main.py`
+2. Enter the operations in the specified format. Use the following guidelines:
+   - Read Operation: `r<transaction_id><variable>`
+   - Write Operation: `w<transaction_id><variable>`
+   - Commit: `C<transaction_id>C`
+   - Abort: `A<transaction_id>A`
 
-Sample Input: r1a,w2a,C1C,r2b,w3a,r2a,w3b,r3c,C3C,C2C
+Example: `r1a, w2a, C1C, r2b, w3a, r2a, w3b, r3c, C3C, C2C`
 
-Output:
-1. Raw Log
-2. Resource Table
-3. Log Table
+3. View the output, which includes the raw log, resource table, and log table.
+
+## Output
+
+### Raw Log
+
+Displays the sequence of operations performed by transactions.
+
+### Resource Table
+
+Provides information about the status of resources (variables) and their corresponding transactions. The table includes the resource name, status (Shared/Exclusive/Free), and the transaction holding the lock.
+
+### Log Table
+
+Displays a log of the operations performed, including the type of operation (Shared Lock, Exclusive Lock, WAIT, RESCHEDULED, COMMIT, or ABORT), the resource name, and the corresponding transaction.
+
