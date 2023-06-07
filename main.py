@@ -119,7 +119,7 @@ while  x < len(schedule):
 			print("Transaction",schedule[x].t,"--> WAIT           |")
 			log_table.add_row(["WAIT","-",schedule[x].t])
 		else:
-			print(" Never Print ")
+			pass
 
 	elif schedule[x].op == "w":
 		temp = res_status(schedule[x].v)
@@ -143,7 +143,7 @@ while  x < len(schedule):
 			print("Transaction",schedule[x].t,"--> WAIT               |")
 			log_table.add_row(["WAIT","-",schedule[x].t])
 		else:
-			print("Dont Print 2")
+			pass
 
 	elif schedule[x].op == "C" or "A":
 		if schedule[x].op == "C":
